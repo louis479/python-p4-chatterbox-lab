@@ -35,12 +35,6 @@ def update_message(id):
     db.session.commit()
     return jsonify(message.to_dict())
 
-@app.route('/messages/<int:id>', methods=['DELETE'])
-def delete_message(id):
-    message = Message.query.get_or_404(id)
-    db.session.delete(message)
-    db.session.commit()
-    return '', 204
 
-if __name__ == '__main__':
-    app.run(port=5555)
+
+
